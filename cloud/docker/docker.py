@@ -320,6 +320,12 @@ options:
     default: false
     aliases: []
     version_added: "2.0"
+  volumes_driver:
+    description:
+      - Specify the name of the volumes driver to use
+    required: false
+    aliases: []
+    version_added: "2.1"
 author:
     - "Cove Schneider (@cove)"
     - "Joshua Conner (@joshuaconner)"
@@ -597,6 +603,7 @@ class DockerManager(object):
             'cap_add': ((0, 5, 0), '1.14'),
             'cap_drop': ((0, 5, 0), '1.14'),
             'read_only': ((1, 0, 0), '1.17'),
+            'volumes_driver': ((1, 4, 0), '1.21'),
             # Clientside only
             'insecure_registry': ((0, 5, 0), '0.0')
             }
